@@ -1,31 +1,23 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { BirthdayService } from '../../shared/services/birthday/birthday.service';
 import { BirthdayPanelComponent } from "./birthday-panel/birthday-panel.component";
-import { Observable, map } from 'rxjs';
-import { Birthday } from '../../shared/models/birthday.model';
 import { MonthPipe } from "../../shared/pipes/month.pipe";
+import { TimePeriodDuration } from '../../shared/enums/time-period-duration.enum';
+import { RemoveUnderscores } from "../../shared/pipes/remove-underscores.pipe";
 
 @Component({
   selector: 'app-month-panel',
   standalone: true,
   templateUrl: './month-panel.component.html',
   styleUrl: './month-panel.component.scss',
-  imports: [CommonModule, BirthdayPanelComponent, MonthPipe]
+  imports: [CommonModule, BirthdayPanelComponent, MonthPipe, RemoveUnderscores]
 })
-export class MonthPanelComponent implements OnInit {
+export class MonthPanelComponent {
 
-  birthdays$!: Observable<Birthday[]>
+  @Input() timePeriodDuration!: TimePeriodDuration;
 
-  @Input() month!: number;
-
-  constructor(private readonly birthdayService: BirthdayService) {
-  }
-
-  ngOnInit(): void {
-    this.birthdays$ = this.birthdayService.query.selectAll().pipe(
-      map((birthdayList) => birthdayList?.filter((birthday) => birthday.birthDay.getMonth() === this.month))
-    )
+  constructor(readonly birthdayService: BirthdayService) {
   }
 
 }

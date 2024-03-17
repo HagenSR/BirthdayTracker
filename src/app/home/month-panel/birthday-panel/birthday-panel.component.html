@@ -1,2 +1,26 @@
-<p>{{birthday.firstName}}</p>
-<p>{{birthday.birthDay}}</p>
+<div class="birthday-container">
+    <div class="nameHolder">
+        <div>
+            {{birthday.firstName}} {{birthday.lastName}}
+        </div>
+        <div class="subtext">
+            {{birthday.birthDay | date : 'MM/d'}} - {{ birthday.birthDay | howOld }}
+        </div>
+    </div>
+    <div style="margin: auto;"></div>
+    <div class="dayHolder">
+        <div>
+            {{birthday.birthDay | daysUntil}}
+        </div>
+        <div>
+            days
+        </div>
+    </div>
+    <div class="dayHolder">
+        <p-button icon="pi pi-angle-right"
+                  routerLink="/user-profile"
+                  [rounded]="true"
+                  [text]="true">
+        </p-button>
+    </div>
+</div>

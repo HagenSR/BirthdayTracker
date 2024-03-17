@@ -1,0 +1,20 @@
+.birthday-container {
+    display: flex;
+    min-height: 3rem;
+}
+
+.dayHolder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nameHolder {
+    display: flex;
+    flex-direction: column;
+}
+
+.subtext {
+    font-weight: 300;
+}

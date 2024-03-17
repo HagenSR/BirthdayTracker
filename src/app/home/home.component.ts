@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { RouterModule } from '@angular/router';
 import { MonthPanelComponent } from "./month-panel/month-panel.component";
 import { CommonModule } from '@angular/common';
+import { BirthdayService } from '../shared/services/birthday/birthday.service';
 
 @Component({
     selector: 'app-home',
@@ -11,13 +12,9 @@ import { CommonModule } from '@angular/common';
     styleUrl: './home.component.scss',
     imports: [ButtonModule, RouterModule, MonthPanelComponent, CommonModule]
 })
-export class HomeComponent implements OnInit {
-    months: number[] = []
+export class HomeComponent {
 
-    ngOnInit(): void {
-        const curMonth = new Date().getMonth()
-        for (let i = 0; i < 12; i++) {
-            this.months.push((curMonth + i) % 12)
-        }
+    constructor(readonly birthdayService: BirthdayService) {
+
     }
 }
