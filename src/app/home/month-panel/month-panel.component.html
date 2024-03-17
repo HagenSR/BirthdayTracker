@@ -1,0 +1,7 @@
+{{month | monthPipe }}
+
+<ng-container *ngFor="let birthday of (birthdays$ | async)">
+    <app-birthday-panel [birthday]="birthday"></app-birthday-panel>
+</ng-container>
+
+<hr />

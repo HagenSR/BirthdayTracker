@@ -1,0 +1,9 @@
+<ng-container *ngFor="let month of months">
+    <app-month-panel [month]="month"></app-month-panel>
+</ng-container>
+
+<div class="menu-bar">
+    <p-button icon="pi pi-calendar"></p-button>
+    <p-button icon="pi pi-plus" routerLink="/add-birthday"></p-button>
+    <p-button icon="pi pi-list"></p-button>
+</div>
