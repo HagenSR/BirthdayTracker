@@ -21,7 +21,7 @@ export class BirthdayService {
     }),
     map((birthdays) => {
       Object.keys(TimePeriodDuration).forEach((period) => {
-        birthdays[period as TimePeriodDuration] = birthdays[period as TimePeriodDuration].sort((a, b) => a.birthDay.getTime() - b.birthDay.getTime())
+        birthdays[period as TimePeriodDuration] = birthdays[period as TimePeriodDuration].sort((a, b) => a.birthDay.getDate() - b.birthDay.getDate())
       })
       return birthdays;
     })
