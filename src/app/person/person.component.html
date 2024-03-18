@@ -1,1 +1,45 @@
-<p>person works!</p>
+<div class="card flex justify-content-center gap-2">
+    <p-confirmPopup></p-confirmPopup>
+</div>
+
+<p-toolbar>
+    <div class="p-toolbar-group-start">
+        <p-button icon="pi pi-home"
+                  routerLink="/home"
+                  [rounded]="true"
+                  [text]="true">
+        </p-button>
+    </div>
+    <div class="p-toolbar-group-end">
+
+        <p-button icon="pi pi-trash"
+                  [rounded]="true"
+                  [text]="true"
+                  (click)="deleteBirthday($event)">
+        </p-button>
+        <div class="holder dayHolder">
+            <p-button icon="pi pi-list"
+                      [routerLink]="['/add-birthday', { id: (id$ | async)}]"
+                      [rounded]="true"
+                      [text]="true">
+            </p-button>
+        </div>
+    </div>
+</p-toolbar>
+<div class="center">
+    <div class="column-center align-content-center">
+        <p-avatar [label]="(birthday$ | async) | initialsPipe"
+                  size="xlarge"
+                  shape="circle"
+                  [style]="{ 'background-color': '#6495ED', color: '#ffffff' }"></p-avatar>
+        <div>
+            {{ (birthday$ | async)?.firstName }} {{ (birthday$ | async)?.lastName }}
+        </div>
+        <div>
+            {{ (birthday$ | async)?.birthDay | howOld }}
+        </div>
+        <div>
+            {{ (birthday$ | async)?.birthDay | date }} - Birthday
+        </div>
+    </div>
+</div>

@@ -1,9 +1,11 @@
 import { Routes } from '@angular/router';
-import { AddBirthdayComponent } from './add-birthday/add-birthday.component';
+import { AddEditBirthdayComponent } from './add-edit-birthday/add-edit-birthday.component';
 import { HomeComponent } from './home/home.component';
+import { PersonComponent } from './person/person.component';
 
 export const routes: Routes = [
-    { path: 'add-birthday', component: AddBirthdayComponent },
+    { path: 'add-birthday', component: AddEditBirthdayComponent },
     { path: 'home', component: HomeComponent },
-    { path: '**', component: HomeComponent }
+    { path: 'person', component: PersonComponent },
+    { path: '**', redirectTo: 'home' }
 ];

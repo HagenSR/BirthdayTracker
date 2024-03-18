@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AddBirthdayComponent } from './add-birthday.component';
+import { AddEditBirthdayComponent } from './add-edit-birthday.component';
 
 describe('AddBirthdayComponent', () => {
-  let component: AddBirthdayComponent;
-  let fixture: ComponentFixture<AddBirthdayComponent>;
+  let component: AddEditBirthdayComponent;
+  let fixture: ComponentFixture<AddEditBirthdayComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AddBirthdayComponent]
+      imports: [AddEditBirthdayComponent]
     })
       .compileComponents();
 
-    fixture = TestBed.createComponent(AddBirthdayComponent);
+    fixture = TestBed.createComponent(AddEditBirthdayComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

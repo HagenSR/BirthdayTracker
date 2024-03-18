@@ -6,8 +6,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class HowOldPipe implements PipeTransform {
 
-    transform(value: Date): string {
+    transform(value: Date | undefined): string {
         const today = new Date()
-        return `turning ${(today.getFullYear() - value.getFullYear())}`
+        return `turning ${(today.getFullYear() - (value?.getFullYear() ?? 0))}`
     }
 }

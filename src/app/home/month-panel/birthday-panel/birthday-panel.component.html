@@ -1,5 +1,11 @@
 <div class="birthday-container">
-    <div class="nameHolder">
+    <div class="margin">
+        <p-avatar [label]="birthday | initialsPipe"
+                  size="large"
+                  shape="circle"
+                  [style]="{ 'background-color': '#6495ED', color: '#ffffff' }"></p-avatar>
+    </div>
+    <div class="column-center">
         <div>
             {{birthday.firstName}} {{birthday.lastName}}
         </div>
@@ -16,9 +22,9 @@
             days
         </div>
     </div>
-    <div class="dayHolder">
+    <div class="column-center dayHolder">
         <p-button icon="pi pi-angle-right"
-                  routerLink="/user-profile"
+                  [routerLink]="['/person', { id: birthday.id}]"
                   [rounded]="true"
                   [text]="true">
         </p-button>

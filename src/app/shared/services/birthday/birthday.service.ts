@@ -18,7 +18,12 @@ export class BirthdayService {
       return birthdays.reduce((acc, birthday) => {
         return this.findPlaceForBirthday(acc, birthday)
       }, this.initializeReducer())
-
+    }),
+    map((birthdays) => {
+      Object.keys(TimePeriodDuration).forEach((period) => {
+        birthdays[period as TimePeriodDuration] = birthdays[period as TimePeriodDuration].sort((a, b) => a.birthDay.getTime() - b.birthDay.getTime())
+      })
+      return birthdays;
     })
   )
 
@@ -42,9 +47,17 @@ export class BirthdayService {
   }
 
   addBirthday(birthday: Birthday) {
-    const newBirthday = { ...birthday, id: this.curId }
-    this.store.add(newBirthday)
-    this.curId++
+    let id = birthday.id
+    if (id === -1) {
+      id = this.curId;
+      this.curId++
+    }
+    const newBirthday = { ...birthday, id: id }
+    this.store.upsert(newBirthday.id, newBirthday)
+  }
+
+  delete(id: number) {
+    this.store.remove(id)
   }
 
   reset() {
