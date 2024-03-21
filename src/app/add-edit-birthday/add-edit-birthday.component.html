@@ -1,27 +1,33 @@
 <p-panel header="{{phrase}} Birthday">
 
-    <ng-template pTemplate="icons">
-        <p-button icon="pi pi-home" routerLink="/home"></p-button>
-    </ng-template>
-
-
-    <div class="wrapper m-0" [formGroup]="form">
+    <div class="wrapper m-0"
+         [formGroup]="form">
 
         <span class="p-float-label">
-            <input pInputText inputId="firstName" formControlName="firstName" data-cy="firstName">
+            <input pInputText
+                   inputId="firstName"
+                   formControlName="firstName"
+                   data-cy="firstName">
             <label for="firstName">Last Name</label>
         </span>
 
         <span class="p-float-label">
-            <input pInputText inputId="lastName" formControlName="lastName" data-cy="lastName">
+            <input pInputText
+                   inputId="lastName"
+                   formControlName="lastName"
+                   data-cy="lastName">
             <label for="lastName">Last Name</label>
         </span>
 
         <span class="p-float-label">
-            <p-calendar formControlName="birthDay"  inputId="birthDay" formControlName="birthDay" data-cy="birthDay"></p-calendar>
+            <p-calendar formControlName="birthDay"
+                        inputId="birthDay"
+                        formControlName="birthDay"
+                        data-cy="birthDay"></p-calendar>
             <label for="birthDay">Birthday</label>
         </span>
 
-        <p-button [label]="phrase" (onClick)="add()"></p-button>
+        <p-button [label]="phrase"
+                  (onClick)="add()"></p-button>
     </div>
 </p-panel>

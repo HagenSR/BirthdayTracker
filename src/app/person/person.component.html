@@ -3,15 +3,8 @@
 </div>
 
 <p-toolbar>
-    <div class="p-toolbar-group-start">
-        <p-button icon="pi pi-home"
-                  routerLink="/home"
-                  [rounded]="true"
-                  [text]="true">
-        </p-button>
-    </div>
+    <div style="margin-left: auto;"></div>
     <div class="p-toolbar-group-end">
-
         <p-button icon="pi pi-trash"
                   [rounded]="true"
                   [text]="true"
@@ -27,7 +20,7 @@
     </div>
 </p-toolbar>
 <div class="center">
-    <div class="column-center align-content-center">
+    <div class="column-center align-content-center padding-top-5">
         <p-avatar [label]="(birthday$ | async) | initialsPipe"
                   size="xlarge"
                   shape="circle"

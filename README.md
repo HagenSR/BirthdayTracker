@@ -6,9 +6,8 @@
 
 ### TODO
 - add tests
-- add export functionality
 
 
 ## FIXED
 - fix sorting on home page for within a month
-
+- add export / import functionality
