@@ -1,8 +1,8 @@
 {
   "name": "BirthdayTracker",
   "short_name": "BirthdayTracker",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "theme_color": "var(--surface-ground)",
+  "background_color": "var(--surface-ground)",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
