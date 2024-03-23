@@ -2,7 +2,9 @@ import { Component, isDevMode } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
+import { ToggleButtonModule } from 'primeng/togglebutton';
 import { HomeBarComponent } from "../home-bar/home-bar.component";
+import { ThemeService } from '../shared/services/theme/theme.service';
 
 @Component({
     selector: 'app-settings',
@@ -10,11 +12,11 @@ import { HomeBarComponent } from "../home-bar/home-bar.component";
     providers: [MessageService],
     templateUrl: './settings.component.html',
     styleUrl: './settings.component.scss',
-    imports: [ButtonModule, ToastModule, HomeBarComponent]
+    imports: [ButtonModule, ToastModule, HomeBarComponent, ToggleButtonModule]
 })
 export class SettingsComponent {
 
-  constructor(readonly messageService: MessageService){
+  constructor(readonly messageService: MessageService, private themeService: ThemeService){
 
   }
 
@@ -41,6 +43,10 @@ importBirthdays($event: any){
     window.location.href = isDevMode() ? 'http://localhost:4200' : 'https://hagensr.github.io/BirthdayTracker';
   };
   reader.readAsText(file);
+}
+
+changeTheme() {
+  this.themeService.toggleTheme()
 }
 
 yippee(){

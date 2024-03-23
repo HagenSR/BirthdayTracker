@@ -27,7 +27,21 @@
             <label for="birthDay">Birthday</label>
         </span>
 
-        <p-button [label]="phrase"
-                  (onClick)="add()"></p-button>
+        <span class="p-float-label">
+            <textarea pInputTextarea
+                      rows="5" 
+                      cols="30"
+                      pInputTextarea 
+                      formControlName="notes" 
+                      inputId="notes" 
+                      formControlName="notes" 
+                      data-cy="notes">
+            </textarea>
+            <label for="notes">Notes</label>
+        </span>
+
+        <p-button [label]="phrase" 
+                  (onClick)="add()">
+        </p-button>
     </div>
 </p-panel>

@@ -3,4 +3,5 @@ export interface Birthday {
     firstName: string;
     lastName: string;
     birthDay: Date;
+    notes: string;
 }

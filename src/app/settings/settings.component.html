@@ -2,22 +2,17 @@
     <h1>Settings</h1>
 </div>
 <div class="flex-space-between">
-    <p-button label="Export Birthdays"
-              (onClick)="exportBirthdays()">
+    <p-button label="Export Birthdays" (onClick)="exportBirthdays()">
     </p-button>
 
     <div>
-        <label for="file"
-               class="p-button font-bold">Import birthdays
+        <label for="file" class="p-button font-bold">Import birthdays
         </label>
-        <input type=file
-               style="display: none;"
-               id=file
-               class="col"
-               textContent="Upload file"
-               formControlName="file"
-               (change)="importBirthdays($event)">
+        <input type=file style="display: none;" id=file class="col" textContent="Upload file" formControlName="file"
+            (change)="importBirthdays($event)">
     </div>
+
+    <p-toggleButton (click)="changeTheme()" onLabel="Light" offLabel="Dark"></p-toggleButton>
 
     <!-- <p-button label="Yippee Button"
               (onClick)="yippee()"

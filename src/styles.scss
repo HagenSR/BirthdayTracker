@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 @import "primeicons/primeicons.css";
 
@@ -39,4 +38,8 @@
 
 .padding-bottom-20 {
     padding-bottom: 20px;
+}
+
+body {
+    margin: 0;
 }

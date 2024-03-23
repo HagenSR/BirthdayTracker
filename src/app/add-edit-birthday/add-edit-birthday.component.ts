@@ -8,12 +8,13 @@ import { Birthday } from '../shared/models/birthday.model';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Observable, filter, map, switchMap, tap } from 'rxjs';
 import { CommonModule } from '@angular/common';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 @Component({
   selector: 'app-add-birthday',
   standalone: true,
-  imports: [PanelModule, InputTextModule, CalendarModule, ReactiveFormsModule, RouterModule, CommonModule],
+  imports: [PanelModule, InputTextModule, CalendarModule, ReactiveFormsModule, RouterModule, CommonModule, InputTextareaModule],
   templateUrl: './add-edit-birthday.component.html',
   styleUrl: './add-edit-birthday.component.scss'
 })
@@ -24,6 +25,7 @@ export class AddEditBirthdayComponent implements OnInit {
     firstName: [null, [Validators.required]],
     lastName: [null, [Validators.required]],
     birthDay: [null, [Validators.required]],
+    notes: ['', []],
   })
 
   id = -1

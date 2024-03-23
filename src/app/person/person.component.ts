@@ -53,7 +53,8 @@ export class PersonComponent {
     private birthdayService: BirthdayService,
     private confirmationService: ConfirmationService,
     private router: Router,
-    private rerun: RerunObservableService) { }
+    private rerun: RerunObservableService) { 
+    }
 
   deleteBirthday(event: Event) {
     this.confirmationService.confirm({

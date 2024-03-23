@@ -24,7 +24,7 @@
         <p-avatar [label]="(birthday$ | async) | initialsPipe"
                   size="xlarge"
                   shape="circle"
-                  [style]="{ 'background-color': '#6495ED', color: '#ffffff' }"></p-avatar>
+                  [style]="{ 'background-color': 'var(--primary-color)', color: 'var(--primary-color-text)' }"></p-avatar>
         <div>
             {{ (birthday$ | async)?.firstName }} {{ (birthday$ | async)?.lastName }}
         </div>
@@ -36,3 +36,9 @@
         </div>
     </div>
 </div>
+<div style="padding: 10px"></div>
+<p class="notes" *ngIf="(birthday$ | async)?.notes">
+    Notes:
+    <br />
+    {{ (birthday$ | async)?.notes }}
+</p>

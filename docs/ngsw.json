@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1711222537561,
+  "timestamp": 1711233007152,
   "index": "/BirthdayTracker/index.html",
   "assetGroups": [
     {
@@ -11,12 +11,14 @@
         "ignoreVary": true
       },
       "urls": [
+        "/BirthdayTracker/dark_style.css",
         "/BirthdayTracker/favicon.ico",
         "/BirthdayTracker/index.html",
-        "/BirthdayTracker/main-LEDJENSX.js",
+        "/BirthdayTracker/light_style.css",
+        "/BirthdayTracker/main-GRUC7HNG.js",
         "/BirthdayTracker/manifest.webmanifest",
         "/BirthdayTracker/polyfills-RT5I6R6G.js",
-        "/BirthdayTracker/styles-GP5VCMX3.css"
+        "/BirthdayTracker/styles-NFTLK4FH.css"
       ],
       "patterns": []
     },
@@ -54,9 +56,11 @@
     "/BirthdayTracker/assets/icons/icon-192x192.png": "3e92fadda745dcf00d19a3a514384963d416e655",
     "/BirthdayTracker/assets/icons/icon-32x32.png": "e9bc5c037aa15e98d3e1e61100f48152b36aefb1",
     "/BirthdayTracker/assets/icons/icon-512x512.png": "dc78dcca9d18cccc46f417e4f10341e6ce0fd071",
+    "/BirthdayTracker/dark_style.css": "cea5e05b500bd57b2c11d1a1e032981453a6a7b0",
     "/BirthdayTracker/favicon.ico": "27632072609609547cc6a15bbf833633db3687e1",
-    "/BirthdayTracker/index.html": "279f6dbd3c5931bcefea7c8c14eb2271d7d0a6e2",
-    "/BirthdayTracker/main-LEDJENSX.js": "d25a3960e03fb130065eb39f6c3be5dc0a333e0f",
+    "/BirthdayTracker/index.html": "a9cb637205440d3772f9a7a2d8b90823b83a4fd3",
+    "/BirthdayTracker/light_style.css": "a84fbef54d7a62595eb0e81ddca01ad10db0e03d",
+    "/BirthdayTracker/main-GRUC7HNG.js": "c5fddc11701ad6e98a6936dc46053ccc145ba368",
     "/BirthdayTracker/manifest.webmanifest": "2f024b0c0a0ad1791ed753571c13687f4cdd5bac",
     "/BirthdayTracker/media/Inter-italic.var-SWFAXF2C.woff2": "6f20a046917bf86d4b6cc29c4e2515bd64d2cb9b",
     "/BirthdayTracker/media/Inter-roman.var-WIJJYAE4.woff2": "7a2602d2ebb08ce895e33addb6fe595f1029431e",
@@ -67,7 +71,7 @@
     "/BirthdayTracker/media/primeicons-SQ5LETCD.svg": "d3332a45242b8f6edbf3f3c7176a280e7edcd961",
     "/BirthdayTracker/media/primeicons-XI7ZC3P3.woff2": "55a4b2a5f02e362405d8d874903af0b5f6a6c15d",
     "/BirthdayTracker/polyfills-RT5I6R6G.js": "fe9f024576f21ff6314cf8f8332cde58b9a12416",
-    "/BirthdayTracker/styles-GP5VCMX3.css": "ca50eb2b1c77c050a9876b754ce9ed9d808854a8"
+    "/BirthdayTracker/styles-NFTLK4FH.css": "47b54bcab47bd401040c452e77344c47c9aad30f"
   },
   "navigationUrls": [
     {
