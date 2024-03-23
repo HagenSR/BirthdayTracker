@@ -29,7 +29,7 @@
             {{ (birthday$ | async)?.firstName }} {{ (birthday$ | async)?.lastName }}
         </div>
         <div>
-            {{ (birthday$ | async)?.birthDay | howOld }}
+            {{ (birthday$ | async)?.birthDay | howOld : (now$ | async)! }}
         </div>
         <div>
             {{ (birthday$ | async)?.birthDay | date }} - Birthday

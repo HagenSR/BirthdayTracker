@@ -2,6 +2,6 @@
     {{ timePeriodDuration | removeUnderscores | titlecase }}
 </div>
 
-<ng-container *ngFor="let birthday of (birthdayService.birthdaysGroupedByDuration$| async)![timePeriodDuration]">
+<ng-container *ngFor="let birthday of (birthdayService.birthdaysGroupedByDuration$ | async)![timePeriodDuration]">
     <app-birthday-panel [birthday]="birthday"></app-birthday-panel>
 </ng-container>

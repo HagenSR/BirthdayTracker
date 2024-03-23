@@ -12,6 +12,7 @@ import { HowOldPipe } from "../shared/pipes/how-old.pipe";
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ConfirmationService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
+import { RerunObservableService } from '../shared/services/Rerun/rerun-observable.service';
 
 @Component({
   selector: 'app-person',
@@ -34,6 +35,8 @@ export class PersonComponent {
 
   id: number = -1;
 
+  now$ = this.rerun.currentDate$
+
   id$ = this.route.paramMap.pipe(
     map(params => {
       this.id = Number(params.get('id'))
@@ -45,7 +48,12 @@ export class PersonComponent {
     switchMap((id) => this.birthdayService.query.selectEntity(id)),
     filter((birthday) => Boolean(birthday))
   ) as Observable<Birthday>
-  constructor(private route: ActivatedRoute, private birthdayService: BirthdayService, private confirmationService: ConfirmationService, private router: Router) { }
+  
+  constructor(private route: ActivatedRoute,
+    private birthdayService: BirthdayService,
+    private confirmationService: ConfirmationService,
+    private router: Router,
+    private rerun: RerunObservableService) { }
 
   deleteBirthday(event: Event) {
     this.confirmationService.confirm({

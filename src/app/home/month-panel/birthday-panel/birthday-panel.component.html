@@ -10,13 +10,13 @@
             {{birthday.firstName}} {{birthday.lastName}}
         </div>
         <div class="subtext">
-            {{birthday.birthDay | date : 'MM/d'}} - {{ birthday.birthDay | howOld }}
+            {{birthday.birthDay | date : 'MM/d'}} - {{ birthday.birthDay | howOld : (currentDate$ | async)! }}
         </div>
     </div>
     <div style="margin: auto;"></div>
     <div class="column-center center">
         <div>
-            {{birthday.birthDay | daysUntil}}
+            {{birthday.birthDay | daysUntil : (currentDate$ | async)!}}
         </div>
         <div>
             days

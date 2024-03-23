@@ -8,8 +8,7 @@ export class DaysUntilPipe implements PipeTransform {
 
     private oneDay = 24 * 60 * 60 * 1000;
 
-    transform(value: Date): string {
-        const today = new Date()
+    transform(value: Date, today: Date): string {
         let year = today.getFullYear()
         if (value.getMonth() < today.getMonth() || (value.getMonth() === today.getMonth() && value.getDate() < today.getDate())) {
             year += 1

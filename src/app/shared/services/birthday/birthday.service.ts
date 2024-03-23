@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { BirthdayStore } from './birthday.store';
 import { BirthdayQuery } from './birthday.query';
 import { Birthday } from '../../models/birthday.model';
-import { map, repeat, startWith, timer } from 'rxjs';
+import { combineLatest, map, repeat } from 'rxjs';
 import { TimePeriodDuration } from '../../enums/time-period-duration.enum';
 import { monthToDuration } from '../../util/records';
+import { RerunObservableService } from '../Rerun/rerun-observable.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,8 @@ export class BirthdayService {
 
   private curId = 0;
 
-  birthdaysGroupedByDuration$ = this.query.selectAll().pipe(
+  birthdaysGroupedByDuration$ = combineLatest([this.query.selectAll(), this.rerun.retriggerObservable$]).pipe(
+    map((array) => array[0]),
     map((birthdays) => {
       return birthdays.reduce((acc, birthday) => {
         return this.findPlaceForBirthday(acc, birthday)
@@ -27,8 +29,7 @@ export class BirthdayService {
     })
   )
 
-  durationsInOrder$ = timer(3.6e+6).pipe(
-    startWith(0),
+  durationsInOrder$ = this.rerun.retriggerObservable$.pipe(
     map(() => {
       const durationsInOrder = [TimePeriodDuration.TODAY, TimePeriodDuration.WEEK, TimePeriodDuration.REMAINDER_OF_MONTH]
       const curMonth = new Date().getMonth() + 1
@@ -41,7 +42,8 @@ export class BirthdayService {
   )
 
   constructor(private readonly store: BirthdayStore,
-    public readonly query: BirthdayQuery) {
+    public readonly query: BirthdayQuery,
+    private readonly rerun: RerunObservableService) {
     this.updateCurId()
     this.updateSerializedStringsToDates()
   }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, isDevMode } from '@angular/core';
 import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
@@ -38,7 +38,7 @@ importBirthdays($event: any){
   reader.onload = function fileReadCompleted() {
     console.log(reader.result);
     localStorage.setItem('AkitaStores', reader?.result?.toString() ?? '')
-    location.reload();
+    window.location.href = isDevMode() ? 'http://localhost:4200' : 'https://hagensr.github.io/BirthdayTracker';
   };
   reader.readAsText(file);
 }

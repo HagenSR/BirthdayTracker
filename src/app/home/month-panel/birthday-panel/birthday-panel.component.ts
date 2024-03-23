@@ -7,6 +7,7 @@ import { ButtonModule } from 'primeng/button';
 import { AvatarModule } from 'primeng/avatar';
 import { InitialsPipe } from "../../../shared/pipes/initials.pipe";
 import { RouterModule } from '@angular/router';
+import { RerunObservableService } from '../../../shared/services/Rerun/rerun-observable.service';
 
 @Component({
     selector: 'app-birthday-panel',
@@ -18,4 +19,10 @@ import { RouterModule } from '@angular/router';
 export class BirthdayPanelComponent {
 
   @Input() birthday!: Birthday
+
+  currentDate$ = this.rerun.currentDate$;
+
+  constructor(private rerun: RerunObservableService){
+  }
+
 }
