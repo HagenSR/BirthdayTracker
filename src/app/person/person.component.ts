@@ -4,10 +4,10 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { ToolbarModule } from 'primeng/toolbar';
 import { Observable, filter, map, switchMap } from 'rxjs';
-import { BirthdayService } from '../shared/services/birthday/birthday.service';
+import { CalendarEventService } from '../shared/services/calendar-event/calendar-event.service';
 import { InitialsPipe } from "../shared/pipes/initials.pipe";
 import { AvatarModule } from 'primeng/avatar';
-import { Birthday } from '../shared/models/birthday.model';
+import { CalendarEvent } from '../shared/models/calendar-event.model';
 import { HowOldPipe } from "../shared/pipes/how-old.pipe";
 import { ConfirmPopupModule } from 'primeng/confirmpopup';
 import { ConfirmationService } from 'primeng/api';
@@ -44,25 +44,25 @@ export class PersonComponent {
     })
   )
 
-  birthday$ = this.id$.pipe(
-    switchMap((id) => this.birthdayService.query.selectEntity(id)),
-    filter((birthday) => Boolean(birthday))
-  ) as Observable<Birthday>
+  event$ = this.id$.pipe(
+    switchMap((id) => this.eventService.query.selectEntity(id)),
+    filter((event) => Boolean(event))
+  ) as Observable<CalendarEvent>
   
   constructor(private route: ActivatedRoute,
-    private birthdayService: BirthdayService,
+    private eventService: CalendarEventService,
     private confirmationService: ConfirmationService,
     private router: Router,
     private rerun: RerunObservableService) { 
     }
 
-  deleteBirthday(event: Event) {
+  deleteEvent(event: Event) {
     this.confirmationService.confirm({
       target: event.target as EventTarget,
       message: 'Are you sure you want to delete?',
       icon: 'pi pi-exclamation-triangle',
       accept: () => {
-        this.birthdayService.delete(this.id)
+        this.eventService.delete(this.id)
         this.router.navigate(['/home'])
       }
     });

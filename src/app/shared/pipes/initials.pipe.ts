@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Birthday } from '../models/birthday.model';
+import { CalendarEvent } from '../models/calendar-event.model';
 
 @Pipe({
     standalone: true,
@@ -7,7 +7,7 @@ import { Birthday } from '../models/birthday.model';
 })
 export class InitialsPipe implements PipeTransform {
 
-    transform(value: Birthday | null): string {
+    transform(value: CalendarEvent | null): string {
         return `${value?.firstName?.substring(0,1)?.toUpperCase() ?? ''}${value?.lastName?.substring(0,1)?.toUpperCase() ?? ''}`
     }
 }

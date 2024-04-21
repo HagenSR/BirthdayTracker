@@ -13,8 +13,8 @@ export class DaysUntilPipe implements PipeTransform {
         if (value.getMonth() < today.getMonth() || (value.getMonth() === today.getMonth() && value.getDate() < today.getDate())) {
             year += 1
         }
-        const nextBirthday = new Date(year, value.getMonth(), value.getDate())
-        const diffDays = Math.floor(Math.abs((nextBirthday.getTime() - today.getTime()) / this.oneDay));
+        const nextEvent = new Date(year, value.getMonth(), value.getDate())
+        const diffDays = Math.floor(Math.abs((nextEvent.getTime() - today.getTime()) / this.oneDay));
         return `${(diffDays)}`
     }
 }

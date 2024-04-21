@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MonthPanelComponent } from "./month-panel/month-panel.component";
 import { CommonModule } from '@angular/common';
-import { BirthdayService } from '../shared/services/birthday/birthday.service';
+import { CalendarEventService } from '../shared/services/calendar-event/calendar-event.service';
 import { HomeBarComponent } from "../home-bar/home-bar.component";
 
 @Component({
@@ -13,7 +13,7 @@ import { HomeBarComponent } from "../home-bar/home-bar.component";
 })
 export class HomeComponent {
 
-    constructor(readonly birthdayService: BirthdayService) {
+    constructor(readonly eventService: CalendarEventService) {
         
     }
 }

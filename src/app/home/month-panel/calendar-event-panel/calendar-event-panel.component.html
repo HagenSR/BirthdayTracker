@@ -1,22 +1,22 @@
-<div class="birthday-container">
+<div class="event-container">
     <div class="margin">
-        <p-avatar [label]="birthday | initialsPipe"
+        <p-avatar [label]="event | initialsPipe"
                   size="large"
                   shape="circle"
                   [style]="{ 'background-color': 'var(--primary-color)', color: 'var(--primary-color-text)' }"></p-avatar>
     </div>
     <div class="column-center">
         <div>
-            {{birthday.firstName}} {{birthday.lastName}}
+            {{event.firstName}} {{event.lastName}}
         </div>
         <div class="subtext">
-            {{birthday.birthDay | date : 'MM/d'}} - {{ birthday.birthDay | howOld : (currentDate$ | async)! }}
+            {{event.date | date : 'MM/d'}} - {{ event.date | howOld : (currentDate$ | async)! : event.eventName }}
         </div>
     </div>
     <div style="margin: auto;"></div>
     <div class="column-center center">
         <div>
-            {{birthday.birthDay | daysUntil : (currentDate$ | async)!}}
+            {{event.date | daysUntil : (currentDate$ | async)!}}
         </div>
         <div>
             days
@@ -24,7 +24,7 @@
     </div>
     <div class="column-center dayHolder">
         <p-button icon="pi pi-angle-right"
-                  [routerLink]="['/person', { id: birthday.id}]"
+                  [routerLink]="['/person', { id: event.id}]"
                   [rounded]="true"
                   [text]="true">
         </p-button>

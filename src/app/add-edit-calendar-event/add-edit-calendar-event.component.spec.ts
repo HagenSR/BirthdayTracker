@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { AddEditBirthdayComponent } from './add-edit-birthday.component';
+import { AddEditCalendarEventComponent } from './add-edit-calendar-event.component';
 
 describe('AddBirthdayComponent', () => {
-  let component: AddEditBirthdayComponent;
-  let fixture: ComponentFixture<AddEditBirthdayComponent>;
+  let component: AddEditCalendarEventComponent;
+  let fixture: ComponentFixture<AddEditCalendarEventComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AddEditBirthdayComponent]
+      imports: [AddEditCalendarEventComponent]
     })
       .compileComponents();
 
-    fixture = TestBed.createComponent(AddEditBirthdayComponent);
+    fixture = TestBed.createComponent(AddEditCalendarEventComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

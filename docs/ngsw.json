@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1711233518710,
+  "timestamp": 1713670737139,
   "index": "/BirthdayTracker/index.html",
   "assetGroups": [
     {
@@ -15,7 +15,7 @@
         "/BirthdayTracker/favicon.ico",
         "/BirthdayTracker/index.html",
         "/BirthdayTracker/light_style.css",
-        "/BirthdayTracker/main-GRUC7HNG.js",
+        "/BirthdayTracker/main-F2EINNR4.js",
         "/BirthdayTracker/manifest.webmanifest",
         "/BirthdayTracker/polyfills-RT5I6R6G.js",
         "/BirthdayTracker/styles-NFTLK4FH.css"
@@ -58,9 +58,9 @@
     "/BirthdayTracker/assets/icons/icon-512x512.png": "dc78dcca9d18cccc46f417e4f10341e6ce0fd071",
     "/BirthdayTracker/dark_style.css": "cea5e05b500bd57b2c11d1a1e032981453a6a7b0",
     "/BirthdayTracker/favicon.ico": "27632072609609547cc6a15bbf833633db3687e1",
-    "/BirthdayTracker/index.html": "0124796f0fd535f22b517a59149367c86c353541",
+    "/BirthdayTracker/index.html": "033e17894e53de5613f7e196e25d4a74f762a147",
     "/BirthdayTracker/light_style.css": "a84fbef54d7a62595eb0e81ddca01ad10db0e03d",
-    "/BirthdayTracker/main-GRUC7HNG.js": "c5fddc11701ad6e98a6936dc46053ccc145ba368",
+    "/BirthdayTracker/main-F2EINNR4.js": "1c35aa5b7d120ae0146c059baf941274e7392287",
     "/BirthdayTracker/manifest.webmanifest": "6b82cac3c591e2618a8b6e1d2fb3c0fccf45ec1a",
     "/BirthdayTracker/media/Inter-italic.var-SWFAXF2C.woff2": "6f20a046917bf86d4b6cc29c4e2515bd64d2cb9b",
     "/BirthdayTracker/media/Inter-roman.var-WIJJYAE4.woff2": "7a2602d2ebb08ce895e33addb6fe595f1029431e",

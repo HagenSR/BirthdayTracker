@@ -1,4 +1,4 @@
-<ng-container *ngFor="let key of (birthdayService.durationsInOrder$ | async)"
+<ng-container *ngFor="let key of (eventService.durationsInOrder$ | async)"
               class="padding-bottom-10">
     <app-month-panel [timePeriodDuration]="key"></app-month-panel>
 </ng-container>

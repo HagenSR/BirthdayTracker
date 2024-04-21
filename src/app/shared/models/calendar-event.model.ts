@@ -1,7 +1,8 @@
-export interface Birthday {
+export interface CalendarEvent {
     id: number;
     firstName: string;
     lastName: string;
-    birthDay: Date;
+    eventName: string;
+    date: Date;
     notes: string;
 }

@@ -8,11 +8,11 @@
         <p-button icon="pi pi-trash"
                   [rounded]="true"
                   [text]="true"
-                  (click)="deleteBirthday($event)">
+                  (click)="deleteEvent($event)">
         </p-button>
         <div class="holder dayHolder">
             <p-button icon="pi pi-list"
-                      [routerLink]="['/add-birthday', { id: (id$ | async)}]"
+                      [routerLink]="['/add-edit-event', { id: (id$ | async)}]"
                       [rounded]="true"
                       [text]="true">
             </p-button>
@@ -21,24 +21,24 @@
 </p-toolbar>
 <div class="center">
     <div class="column-center align-content-center padding-top-5">
-        <p-avatar [label]="(birthday$ | async) | initialsPipe"
+        <p-avatar [label]="(event$ | async) | initialsPipe"
                   size="xlarge"
                   shape="circle"
                   [style]="{ 'background-color': 'var(--primary-color)', color: 'var(--primary-color-text)' }"></p-avatar>
         <div>
-            {{ (birthday$ | async)?.firstName }} {{ (birthday$ | async)?.lastName }}
+            {{ (event$ | async)?.firstName }} {{ (event$ | async)?.lastName }}
         </div>
         <div>
-            {{ (birthday$ | async)?.birthDay | howOld : (now$ | async)! }}
+            {{ (event$ | async)?.date | howOld : (now$ | async)! : (event$ | async)?.eventName ?? '' }}
         </div>
         <div>
-            {{ (birthday$ | async)?.birthDay | date }} - Birthday
+            {{ (event$ | async)?.date | date }} - {{ (event$ | async)?.eventName }}
         </div>
     </div>
 </div>
 <div style="padding: 10px"></div>
-<p class="notes" *ngIf="(birthday$ | async)?.notes">
+<p class="notes" *ngIf="(event$ | async)?.notes">
     Notes:
     <br />
-    {{ (birthday$ | async)?.notes }}
+    {{ (event$ | async)?.notes }}
 </p>

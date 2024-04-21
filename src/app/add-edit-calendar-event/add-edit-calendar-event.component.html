@@ -1,4 +1,4 @@
-<p-panel header="{{phrase}} Birthday">
+<p-panel header="{{phrase}} Event">
 
     <div class="wrapper m-0"
          [formGroup]="form">
@@ -8,7 +8,7 @@
                    inputId="firstName"
                    formControlName="firstName"
                    data-cy="firstName">
-            <label for="firstName">Last Name</label>
+            <label for="firstName">First Name</label>
         </span>
 
         <span class="p-float-label">
@@ -20,11 +20,19 @@
         </span>
 
         <span class="p-float-label">
-            <p-calendar formControlName="birthDay"
-                        inputId="birthDay"
-                        formControlName="birthDay"
-                        data-cy="birthDay"></p-calendar>
-            <label for="birthDay">Birthday</label>
+            <input pInputText
+                   inputId="eventName"
+                   formControlName="eventName"
+                   data-cy="eventname">
+            <label for="eventname">Event Name</label>
+        </span>
+
+        <span class="p-float-label">
+            <p-calendar formControlName="date"
+                        inputId="date"
+                        formControlName="date"
+                        data-cy="date"></p-calendar>
+            <label for="date">Date</label>
         </span>
 
         <span class="p-float-label">
