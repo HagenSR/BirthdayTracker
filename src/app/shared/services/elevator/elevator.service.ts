@@ -25,7 +25,7 @@ export class ElevatorService {
   }
 
   private updateOneVersion() {
-    switch (this.versionService.version) {
+    switch (this.versionService.getVersion()) {
       case Version.one: {
         this.v1Tov2.update()
         break;

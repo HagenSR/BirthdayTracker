@@ -26,7 +26,7 @@ export class SettingsComponent {
 
   exportEvents() {
     const link = document.createElement('a');
-    const store = localStorage.getItem('AkitaStores')
+    let store = localStorage.getItem('AkitaStores')
     link.setAttribute('target', '_blank');
     const blob = new Blob([store ?? ''], { type: 'application/json' });
     const fileUrl = URL.createObjectURL(blob);
