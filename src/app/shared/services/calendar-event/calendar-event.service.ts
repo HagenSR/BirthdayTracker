@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { EventStore } from './calendar-event.store';
-import { CalendarEventQuery } from './calendar-event.query';
+import { Store } from '@ngrx/store';
+import { take, combineLatest, map, repeat } from 'rxjs';
 import { CalendarEvent } from '../../models/calendar-event.model';
-import { combineLatest, map, repeat } from 'rxjs';
 import { TimePeriodDuration } from '../../enums/time-period-duration.enum';
 import { monthToDuration } from '../../util/records';
 import { RerunObservableService } from '../Rerun/rerun-observable.service';
+import { upsertCalendarEvent, removeCalendarEvent, setCalendarEvents, resetCalendarEvents } from '../../../store/calendar-event/calendar-event.actions';
+import { selectAllCalendarEvents, selectCalendarEventById } from '../../../store/calendar-event/calendar-event.selectors';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,9 @@ export class CalendarEventService {
 
   private curId = 0;
 
-  eventsGroupedByDuration$ = combineLatest([this.query.selectAll(), this.rerun.retriggerObservable$]).pipe(
+  private allEvents$ = this.store.select(selectAllCalendarEvents);
+
+  eventsGroupedByDuration$ = combineLatest([this.allEvents$, this.rerun.retriggerObservable$]).pipe(
     map((array) => array[0]),
     map((events) => {
       return events.reduce((acc, event) => {
@@ -41,11 +44,12 @@ export class CalendarEventService {
     repeat()
   )
 
-  constructor(private readonly store: EventStore,
-    public readonly query: CalendarEventQuery,
+  constructor(private readonly store: Store,
     private readonly rerun: RerunObservableService) {
-    this.updateCurId()
-    this.updateSerializedStringsToDates()
+    this.allEvents$.pipe(take(1)).subscribe(events => {
+      this.updateCurId(events);
+      this.updateSerializedStringsToDates(events);
+    });
   }
 
   addEvent(event: CalendarEvent) {
@@ -54,30 +58,31 @@ export class CalendarEventService {
       id = this.curId;
       this.curId++
     }
-    const newEvent = { ...event, id: id }
-    this.store.upsert(newEvent.id, newEvent)
+    this.store.dispatch(upsertCalendarEvent({ event: { ...event, id } }));
   }
 
   delete(id: number) {
-    this.store.remove(id)
+    this.store.dispatch(removeCalendarEvent({ id }));
   }
 
   reset() {
-    this.store.reset()
+    this.store.dispatch(resetCalendarEvents());
   }
 
-  updateCurId() {
-    const ids = this.query.getAll().sort((a, b) => b.id - a.id).map((event) => event.id);
+  selectEntity(id: number) {
+    return this.store.select(selectCalendarEventById(id));
+  }
+
+  private updateCurId(events: CalendarEvent[]) {
+    const ids = events.map(e => e.id).sort((a, b) => b - a);
     if (ids.length > 0) {
-      this.curId = ids[0] + 1
+      this.curId = ids[0] + 1;
     }
   }
 
-  updateSerializedStringsToDates() {
-    const events = this.query.getAll().map((events) => {
-      return { ...events, date: new Date(events.date) }
-    })
-    this.store.set(events)
+  private updateSerializedStringsToDates(events: CalendarEvent[]) {
+    const deserialized = events.map(e => ({ ...e, date: new Date(e.date) }));
+    this.store.dispatch(setCalendarEvents({ events: deserialized }));
   }
 
   initializeReducer(): Record<TimePeriodDuration, CalendarEvent[]> {
@@ -106,4 +111,3 @@ export class CalendarEventService {
     return acc;
   }
 }
-

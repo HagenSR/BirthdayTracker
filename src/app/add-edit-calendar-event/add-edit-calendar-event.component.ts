@@ -43,7 +43,7 @@ export class AddEditCalendarEventComponent implements OnInit {
   )
 
   event$ = this.id$.pipe(
-    switchMap((id) => this.eventService.query.selectEntity(id)),
+    switchMap((id) => this.eventService.selectEntity(id)),
     filter((event) => Boolean(event))
   ) as Observable<CalendarEvent>
 
