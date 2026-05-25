@@ -8,6 +8,7 @@ import { ThemeService } from './shared/services/theme/theme.service';
 
 @Component({
     selector: 'app-root',
+    standalone: true,
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss',
     imports: [RouterOutlet, HomeComponent, HomeBarComponent]

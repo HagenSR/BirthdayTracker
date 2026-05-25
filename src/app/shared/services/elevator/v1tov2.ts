@@ -17,7 +17,9 @@ export class V1toV2 {
   }
 
   update() {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     this.store.select(selectAllCalendarEvents).pipe(take(1)).subscribe((events: any[]) => {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const migrated = events.map((event: any) => {
         const newEvent = { ...event, date: new Date(event.birthDay), eventName: 'Birthday' }
         delete newEvent.birthDay

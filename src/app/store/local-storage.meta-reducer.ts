@@ -2,6 +2,7 @@ import { ActionReducer } from '@ngrx/store';
 
 const STORAGE_KEY = 'AkitaStores';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function localStorageMetaReducer(reducer: ActionReducer<any>): ActionReducer<any> {
   return (state, action) => {
     const nextState = reducer(state, action);

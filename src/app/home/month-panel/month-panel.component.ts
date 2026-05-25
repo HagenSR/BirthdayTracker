@@ -8,6 +8,7 @@ import { RemoveUnderscores } from "../../shared/pipes/remove-underscores.pipe";
 
 @Component({
     selector: 'app-month-panel',
+    standalone: true,
     templateUrl: './month-panel.component.html',
     styleUrl: './month-panel.component.scss',
     imports: [CommonModule, CalendarEventPanelComponent, MonthPipe, RemoveUnderscores]

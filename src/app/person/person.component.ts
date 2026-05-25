@@ -16,6 +16,7 @@ import { RerunObservableService } from '../shared/services/Rerun/rerun-observabl
 
 @Component({
     selector: 'app-person',
+    standalone: true,
     templateUrl: './person.component.html',
     styleUrl: './person.component.scss',
     imports: [ButtonModule,

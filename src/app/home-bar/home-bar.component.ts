@@ -5,6 +5,7 @@ import { ButtonModule } from 'primeng/button';
 
 @Component({
     selector: 'app-home-bar',
+    standalone: true,
     imports: [ButtonModule, RouterModule, CommonModule],
     templateUrl: './home-bar.component.html',
     styleUrl: './home-bar.component.scss'

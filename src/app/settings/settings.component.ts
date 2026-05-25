@@ -10,6 +10,7 @@ import { Version } from '../shared/enums/version.enum';
 
 @Component({
     selector: 'app-settings',
+    standalone: true,
     providers: [MessageService],
     templateUrl: './settings.component.html',
     styleUrl: './settings.component.scss',
@@ -25,7 +26,7 @@ export class SettingsComponent {
 
   exportEvents() {
     const link = document.createElement('a');
-    let store = localStorage.getItem('AkitaStores')
+    const store = localStorage.getItem('AkitaStores')
     link.setAttribute('target', '_blank');
     const blob = new Blob([store ?? ''], { type: 'application/json' });
     const fileUrl = URL.createObjectURL(blob);
