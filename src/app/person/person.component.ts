@@ -15,21 +15,20 @@ import { ToastModule } from 'primeng/toast';
 import { RerunObservableService } from '../shared/services/Rerun/rerun-observable.service';
 
 @Component({
-  selector: 'app-person',
-  standalone: true,
-  templateUrl: './person.component.html',
-  styleUrl: './person.component.scss',
-  imports: [ButtonModule,
-    RouterModule,
-    ToolbarModule,
-    CommonModule,
-    InitialsPipe,
-    AvatarModule,
-    CommonModule,
-    HowOldPipe,
-    ConfirmPopupModule,
-    ToastModule],
-  providers: [ConfirmationService]
+    selector: 'app-person',
+    templateUrl: './person.component.html',
+    styleUrl: './person.component.scss',
+    imports: [ButtonModule,
+        RouterModule,
+        ToolbarModule,
+        CommonModule,
+        InitialsPipe,
+        AvatarModule,
+        CommonModule,
+        HowOldPipe,
+        ConfirmPopupModule,
+        ToastModule],
+    providers: [ConfirmationService]
 })
 export class PersonComponent {
 

@@ -7,11 +7,10 @@ import { TimePeriodDuration } from '../../shared/enums/time-period-duration.enum
 import { RemoveUnderscores } from "../../shared/pipes/remove-underscores.pipe";
 
 @Component({
-  selector: 'app-month-panel',
-  standalone: true,
-  templateUrl: './month-panel.component.html',
-  styleUrl: './month-panel.component.scss',
-  imports: [CommonModule, CalendarEventPanelComponent, MonthPipe, RemoveUnderscores]
+    selector: 'app-month-panel',
+    templateUrl: './month-panel.component.html',
+    styleUrl: './month-panel.component.scss',
+    imports: [CommonModule, CalendarEventPanelComponent, MonthPipe, RemoveUnderscores]
 })
 export class MonthPanelComponent {
 

@@ -6,7 +6,6 @@ import { HomeBarComponent } from "../home-bar/home-bar.component";
 
 @Component({
     selector: 'app-home',
-    standalone: true,
     templateUrl: './home.component.html',
     styleUrl: './home.component.scss',
     imports: [MonthPanelComponent, CommonModule, HomeBarComponent]

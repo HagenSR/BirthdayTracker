@@ -7,11 +7,10 @@ import { ElevatorService } from './shared/services/elevator/elevator.service';
 import { ThemeService } from './shared/services/theme/theme.service';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  imports: [RouterOutlet, HomeComponent, HomeBarComponent]
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
+    imports: [RouterOutlet, HomeComponent, HomeBarComponent]
 })
 export class AppComponent implements OnInit {
 

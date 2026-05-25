@@ -12,11 +12,10 @@ import { InputTextareaModule } from 'primeng/inputtextarea';
 
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 @Component({
-  selector: 'app-add-edit-calendar-event',
-  standalone: true,
-  imports: [PanelModule, InputTextModule, CalendarModule, ReactiveFormsModule, RouterModule, CommonModule, InputTextareaModule],
-  templateUrl: './add-edit-calendar-event.component.html',
-  styleUrl: './add-edit-calendar-event.component.scss'
+    selector: 'app-add-edit-calendar-event',
+    imports: [PanelModule, InputTextModule, CalendarModule, ReactiveFormsModule, RouterModule, CommonModule, InputTextareaModule],
+    templateUrl: './add-edit-calendar-event.component.html',
+    styleUrl: './add-edit-calendar-event.component.scss'
 })
 export class AddEditCalendarEventComponent implements OnInit {
 

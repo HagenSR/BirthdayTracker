@@ -9,12 +9,11 @@ import { VersionService } from '../shared/services/version/version.service';
 import { Version } from '../shared/enums/version.enum';
 
 @Component({
-  selector: 'app-settings',
-  standalone: true,
-  providers: [MessageService],
-  templateUrl: './settings.component.html',
-  styleUrl: './settings.component.scss',
-  imports: [ButtonModule, ToastModule, HomeBarComponent, ToggleButtonModule]
+    selector: 'app-settings',
+    providers: [MessageService],
+    templateUrl: './settings.component.html',
+    styleUrl: './settings.component.scss',
+    imports: [ButtonModule, ToastModule, HomeBarComponent, ToggleButtonModule]
 })
 export class SettingsComponent {
 

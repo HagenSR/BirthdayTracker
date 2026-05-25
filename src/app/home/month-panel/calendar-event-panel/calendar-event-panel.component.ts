@@ -11,7 +11,6 @@ import { RerunObservableService } from '../../../shared/services/Rerun/rerun-obs
 
 @Component({
     selector: 'app-calendar-event-panel',
-    standalone: true,
     templateUrl: './calendar-event-panel.component.html',
     styleUrl: './calendar-event-panel.component.scss',
     imports: [CommonModule, HowOldPipe, DaysUntilPipe, ButtonModule, AvatarModule, InitialsPipe, RouterModule]
