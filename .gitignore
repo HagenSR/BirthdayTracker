@@ -40,3 +40,4 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+.nx/cache/18.3.5-nx.win32-x64-msvc.node
