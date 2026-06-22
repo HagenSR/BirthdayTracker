@@ -1,0 +1,32 @@
+hagensr.com {
+        handle /my_app/* {
+                reverse_proxy 192.168.0.70:8081
+        }
+        handle /primes* {
+                reverse_proxy 192.168.0.70:8083
+        }
+        handle /kalshi* {
+                reverse_proxy 192.168.0.70:8082
+        }
+        handle /blog* {
+                reverse_proxy 192.168.0.70:8005
+        }
+        handle_path /compound_interest_website/* {
+                root * /home/antarctic9115/compound_interest_website/browser
+                encode gzip
+                try_files {path} /index.html
+                file_server
+        }
+        handle /birthday_tracker {
+                redir * /birthday_tracker/ 301
+        }
+        handle_path /birthday_tracker/* {
+                root * /home/antarctic9115/birthday_tracker
+                encode gzip
+                try_files {path} /index.html
+                file_server
+        }
+        handle /* {
+                reverse_proxy 192.168.0.70:8006
+        }
+}

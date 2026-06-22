@@ -1,44 +1,46 @@
 <div class="card flex justify-content-center gap-2">
-    <p-confirmPopup></p-confirmPopup>
+  <p-confirmpopup></p-confirmpopup>
 </div>
 
 <p-toolbar>
-    <div style="margin-left: auto;"></div>
-    <div class="p-toolbar-group-end">
-        <p-button icon="pi pi-trash"
-                  [rounded]="true"
-                  [text]="true"
-                  (click)="deleteEvent($event)">
-        </p-button>
-        <div class="holder dayHolder">
-            <p-button icon="pi pi-list"
-                      [routerLink]="['/add-edit-event', { id: (id$ | async)}]"
-                      [rounded]="true"
-                      [text]="true">
-            </p-button>
-        </div>
+  <div style="margin-left: auto;"></div>
+  <div class="p-toolbar-group-end">
+    <p-button icon="pi pi-trash"
+      [rounded]="true"
+      [text]="true"
+      (click)="deleteEvent($event)">
+    </p-button>
+    <div class="holder dayHolder">
+      <p-button icon="pi pi-list"
+        [routerLink]="['/add-edit-event', { id: (id$ | async)}]"
+        [rounded]="true"
+        [text]="true">
+      </p-button>
     </div>
+  </div>
 </p-toolbar>
 <div class="center">
-    <div class="column-center align-content-center padding-top-5">
-        <p-avatar [label]="(event$ | async) | initialsPipe"
-                  size="xlarge"
-                  shape="circle"
-                  [style]="{ 'background-color': 'var(--primary-color)', color: 'var(--primary-color-text)' }"></p-avatar>
-        <div>
-            {{ (event$ | async)?.firstName }} {{ (event$ | async)?.lastName }}
-        </div>
-        <div>
-            {{ (event$ | async)?.date | howOld : (now$ | async)! : (event$ | async)?.eventName ?? '' }}
-        </div>
-        <div>
-            {{ (event$ | async)?.date | date }} - {{ (event$ | async)?.eventName }}
-        </div>
+  <div class="column-center align-content-center padding-top-5">
+    <p-avatar [label]="(event$ | async) | initialsPipe"
+      size="xlarge"
+      shape="circle"
+    [style]="{ 'background-color': 'var(--p-primary-color)', color: 'var(--p-primary-contrast-color)' }"></p-avatar>
+    <div>
+      {{ (event$ | async)?.firstName }} {{ (event$ | async)?.lastName }}
     </div>
+    <div>
+      {{ (event$ | async)?.date | howOld : (now$ | async)! : (event$ | async)?.eventName ?? '' }}
+    </div>
+    <div>
+      {{ (event$ | async)?.date | date }} - {{ (event$ | async)?.eventName }}
+    </div>
+  </div>
 </div>
 <div style="padding: 10px"></div>
-<p class="notes" *ngIf="(event$ | async)?.notes">
+@if ((event$ | async)?.notes) {
+  <p class="notes">
     Notes:
     <br />
     {{ (event$ | async)?.notes }}
-</p>
+  </p>
+}

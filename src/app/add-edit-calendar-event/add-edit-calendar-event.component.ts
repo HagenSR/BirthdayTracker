@@ -1,20 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { PanelModule } from 'primeng/panel';
 import { InputTextModule } from 'primeng/inputtext';
-import { CalendarModule } from 'primeng/calendar';
+import { ButtonModule } from 'primeng/button';
+import { DatePickerModule } from 'primeng/datepicker';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CalendarEventService } from '../shared/services/calendar-event/calendar-event.service';
 import { CalendarEvent } from '../shared/models/calendar-event.model';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { Observable, filter, map, switchMap, tap } from 'rxjs';
-import { CommonModule } from '@angular/common';
-import { InputTextareaModule } from 'primeng/inputtextarea';
+
+import { TextareaModule } from 'primeng/textarea';
+import { FloatLabelModule } from 'primeng/floatlabel';
 
 /* eslint-disable  @typescript-eslint/no-explicit-any */
 @Component({
     selector: 'app-add-edit-calendar-event',
     standalone: true,
-    imports: [PanelModule, InputTextModule, CalendarModule, ReactiveFormsModule, RouterModule, CommonModule, InputTextareaModule],
+    imports: [PanelModule, InputTextModule, ButtonModule, DatePickerModule, ReactiveFormsModule, RouterModule, TextareaModule, FloatLabelModule],
     templateUrl: './add-edit-calendar-event.component.html',
     styleUrl: './add-edit-calendar-event.component.scss'
 })

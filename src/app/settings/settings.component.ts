@@ -3,7 +3,6 @@ import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
 import { ToggleButtonModule } from 'primeng/togglebutton';
-import { HomeBarComponent } from "../home-bar/home-bar.component";
 import { ThemeService } from '../shared/services/theme/theme.service';
 import { VersionService } from '../shared/services/version/version.service';
 import { Version } from '../shared/enums/version.enum';
@@ -14,7 +13,7 @@ import { Version } from '../shared/enums/version.enum';
     providers: [MessageService],
     templateUrl: './settings.component.html',
     styleUrl: './settings.component.scss',
-    imports: [ButtonModule, ToastModule, HomeBarComponent, ToggleButtonModule]
+    imports: [ButtonModule, ToastModule, ToggleButtonModule]
 })
 export class SettingsComponent {
 

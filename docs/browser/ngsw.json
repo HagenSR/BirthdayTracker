@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1723307519596,
+  "timestamp": 1782098741747,
   "index": "/BirthdayTracker/index.html",
   "assetGroups": [
     {
@@ -11,14 +11,14 @@
         "ignoreVary": true
       },
       "urls": [
-        "/BirthdayTracker/dark_style.css",
+        "/BirthdayTracker/chunk-5HREJF4B.js",
+        "/BirthdayTracker/chunk-5I3QOLXW.js",
         "/BirthdayTracker/favicon.ico",
         "/BirthdayTracker/index.html",
-        "/BirthdayTracker/light_style.css",
-        "/BirthdayTracker/main-JB4BM22P.js",
+        "/BirthdayTracker/main-NKCM36YS.js",
         "/BirthdayTracker/manifest.webmanifest",
-        "/BirthdayTracker/polyfills-RT5I6R6G.js",
-        "/BirthdayTracker/styles-NFTLK4FH.css"
+        "/BirthdayTracker/polyfills-5CFQRCPP.js",
+        "/BirthdayTracker/styles-QCWKUFSY.css"
       ],
       "patterns": []
     },
@@ -36,10 +36,6 @@
         "/BirthdayTracker/assets/icons/icon-192x192.png",
         "/BirthdayTracker/assets/icons/icon-32x32.png",
         "/BirthdayTracker/assets/icons/icon-512x512.png",
-        "/BirthdayTracker/media/Inter-italic.var-SWFAXF2C.woff2",
-        "/BirthdayTracker/media/Inter-roman.var-WIJJYAE4.woff2",
-        "/BirthdayTracker/media/color-3LUHUBGQ.png",
-        "/BirthdayTracker/media/hue-RMMBQOAC.png",
         "/BirthdayTracker/media/primeicons-7C46RJHE.woff",
         "/BirthdayTracker/media/primeicons-AEJFRHCW.ttf",
         "/BirthdayTracker/media/primeicons-SQ5LETCD.svg",
@@ -56,22 +52,18 @@
     "/BirthdayTracker/assets/icons/icon-192x192.png": "3e92fadda745dcf00d19a3a514384963d416e655",
     "/BirthdayTracker/assets/icons/icon-32x32.png": "e9bc5c037aa15e98d3e1e61100f48152b36aefb1",
     "/BirthdayTracker/assets/icons/icon-512x512.png": "dc78dcca9d18cccc46f417e4f10341e6ce0fd071",
-    "/BirthdayTracker/dark_style.css": "cea5e05b500bd57b2c11d1a1e032981453a6a7b0",
+    "/BirthdayTracker/chunk-5HREJF4B.js": "14669a910dc6b48d6434a91167b7acb7842b7785",
+    "/BirthdayTracker/chunk-5I3QOLXW.js": "5106c33883ae2150ffe5428074dc56b83058550c",
     "/BirthdayTracker/favicon.ico": "27632072609609547cc6a15bbf833633db3687e1",
-    "/BirthdayTracker/index.html": "1014a8ba7c2bd41d750e92b8148d29d1a8f1df78",
-    "/BirthdayTracker/light_style.css": "a84fbef54d7a62595eb0e81ddca01ad10db0e03d",
-    "/BirthdayTracker/main-JB4BM22P.js": "e3b1a502a36dedf756d4dacda6a140a7a9ec7447",
+    "/BirthdayTracker/index.html": "823bce4a21d007e26e25d0dfa798eed20be3b993",
+    "/BirthdayTracker/main-NKCM36YS.js": "d43a879a640928142678504ed1661e59eb4992bc",
     "/BirthdayTracker/manifest.webmanifest": "6b82cac3c591e2618a8b6e1d2fb3c0fccf45ec1a",
-    "/BirthdayTracker/media/Inter-italic.var-SWFAXF2C.woff2": "6f20a046917bf86d4b6cc29c4e2515bd64d2cb9b",
-    "/BirthdayTracker/media/Inter-roman.var-WIJJYAE4.woff2": "7a2602d2ebb08ce895e33addb6fe595f1029431e",
-    "/BirthdayTracker/media/color-3LUHUBGQ.png": "ff4c4bcb2207891b292f544edb4da9d2df5d45cf",
-    "/BirthdayTracker/media/hue-RMMBQOAC.png": "f81ae627637a684614aa726e206c73ce099a01fd",
     "/BirthdayTracker/media/primeicons-7C46RJHE.woff": "b1648b50be13350fde8b5d9a6fe78354ddcc43e4",
     "/BirthdayTracker/media/primeicons-AEJFRHCW.ttf": "ceeb46d594fde5cc507cdf8b70e38e78fe47653c",
     "/BirthdayTracker/media/primeicons-SQ5LETCD.svg": "d3332a45242b8f6edbf3f3c7176a280e7edcd961",
     "/BirthdayTracker/media/primeicons-XI7ZC3P3.woff2": "55a4b2a5f02e362405d8d874903af0b5f6a6c15d",
-    "/BirthdayTracker/polyfills-RT5I6R6G.js": "fe9f024576f21ff6314cf8f8332cde58b9a12416",
-    "/BirthdayTracker/styles-NFTLK4FH.css": "47b54bcab47bd401040c452e77344c47c9aad30f"
+    "/BirthdayTracker/polyfills-5CFQRCPP.js": "f2241e9a25858f895ce299d15f6f22e849e2fd72",
+    "/BirthdayTracker/styles-QCWKUFSY.css": "10cb93acb7aae50ae865438e74fcca70f7f273d6"
   },
   "navigationUrls": [
     {

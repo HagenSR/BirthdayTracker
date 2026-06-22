@@ -1,7 +1,7 @@
 <div class="timeDurationNameHolder separator">
-    {{ timePeriodDuration | removeUnderscores | titlecase }}
+  {{ timePeriodDuration | removeUnderscores | titlecase }}
 </div>
 
-<ng-container *ngFor="let event of (eventService.eventsGroupedByDuration$ | async)![timePeriodDuration]">
-    <app-calendar-event-panel [event]="event"></app-calendar-event-panel>
-</ng-container>
+@for (event of (eventService.eventsGroupedByDuration$ | async)![timePeriodDuration]; track event) {
+  <app-calendar-event-panel [event]="event"></app-calendar-event-panel>
+}
